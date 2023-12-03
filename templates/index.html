@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KITE ISSUE TRACKING SYSTEM</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -68,7 +70,7 @@
 
             <div class="form-group">
                 <label for="department"><i class="fas fa-building"></i> <b>Department:</b></label>
-                <select class="form-control" id="department" name="department">
+                <select class="form-control" id="department" name="department" onchange="updateSemesterOptions()">
                     <option value="IT">IT</option>
                     <option value="CSE">CSE</option>
                     <option value="ECE">ECE</option>
@@ -101,7 +103,9 @@
 
             <div class="form-group">
                 <label for="semester"><i class="fas fa-calendar-alt"></i> <b>Semester:</b></label>
-                <input type="text" class="form-control" id="semester" name="semester" required>
+                <select class="form-control" id="semester" name="semester" required>
+                    <!-- Semester options will be dynamically updated based on department -->
+                </select>
             </div>
 
             <!-- Additional Fields for Infrastructure -->
@@ -125,6 +129,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+    <script>
+        function updateSemesterOptions() {
+            var departmentSelect = document.getElementById("department");
+            var semesterSelect = document.getElementById("semester");
+
+            // Reset options
+            semesterSelect.innerHTML = "";
+
+            // Add options based on the selected department
+            if (departmentSelect.value === "MBA") {
+                var semesterOptions = ["--select--","Semester 1", "Semester 2", "Semester 3", "Semester 4"];
+            } else {
+                var semesterOptions = ["--select--","Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"];
+            }
+
+            // Add options to the semester dropdown
+            for (var i = 0; i < semesterOptions.length; i++) {
+                var option = document.createElement("option");
+                option.value = semesterOptions[i];
+                option.text = semesterOptions[i];
+                semesterSelect.add(option);
+            }
+        }
+    </script>
 </body>
 
 </html>
