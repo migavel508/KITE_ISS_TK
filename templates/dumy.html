@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KITE ISSUE TRACKING SYSTEM</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            backdrop-filter: blur(1px);
+            background-position: 30rem;
+            background-image: url("/templates/logo.png");
+            background-color: #cccccc;
+            margin: 0; /* Remove default body margin */
+        }
+
+        .header {
+            background-color: #d4a373;
+            padding: 20px;
+            text-align: center;
+            color: #fff; /* Text color for better visibility */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0; /* Remove default margin */
+        }
+
+        .header img {
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .container {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>KITE ISSUE TRACKING SYSTEM</h1>
+        <h3>Academic & Infrastructure Issues </h3>
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="container mt-3">
+        <form action="/" method="post">
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="admin_name">Name:</label>
+                <input type="text" class="form-control" id="admin_name" name="admin_name" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select class="form-control" id="department" name="department">
+                    <option value="IT">IT</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="AI&DS">AI&DS</option>
+                    <option value="CSBS">CSBS</option>
+                    <option value="MECH">MECH</option>
+                    <option value="MBA">MBA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="issue">Issue:</label>
+                <input type="text" class="form-control" id="issue" name="issue" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="Open">Open</option>
+                    <option value="Progress">Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Complaint</button>
+        </form>
+    </div>
+</body>
+
+</html>

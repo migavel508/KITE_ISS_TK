@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://career.webindia123.com/career/institutes/aspupload/Uploads/all-states/20569/3_main.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #6c757d;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        nav a:hover::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .motivational-slide {
+            margin-top: 50px;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .motivational-slide p {
+            margin: 20px 0;
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Adjust the height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <title>KITE Issue Tracking System</title>
+</head>
+
+<body>
+    <header>
+        <h1>KITE ISSUE TRACKING SYSTEM</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Academic</a>
+        <a href="wifi.html">WiFi</a>
+        <a href="#">Cleanliness</a>
+        <a href="#">Transport</a>
+        <a href="hostel.html">Hostel</a>
+    </nav>
+
+    <div class="motivational-slide" id="motivationalSlide">
+        <!-- Motivational slides will be dynamically added here -->
+    </div>
+
+    <script>
+        // Fetch motivational slides from the Quotable API
+        fetch('https://api.quotable.io/random?tags=inspirational')
+            .then(response => response.json())
+            .then(data => {
+                const motivationalSlide = document.getElementById('motivationalSlide');
+
+                // Add a single slide with the fetched quote and background image
+                const slideContent = document.createElement('div');
+                slideContent.innerHTML = `<p style="background-image: url('${data.backgroundImage}')">${data.content}</p>`;
+
+                motivationalSlide.appendChild(slideContent);
+            })
+            .catch(error => console.error('Error fetching motivational slides:', error));
+    </script>
+</body>
+
+</html>
