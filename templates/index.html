@@ -13,7 +13,7 @@
         body {
             background-repeat: no-repeat;
             backdrop-filter: blur(1px);
-            background-position: 30rem;
+            background-position: center;
             background-image: url("/templates/logo.png");
             background-color: #ffffff;
         }
@@ -53,7 +53,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-4">
         <h1 class="mb-4">KITE ACADEMIC/INFRASTRUCTURE ISSUES</h1>
         <form action="/" method="post">
             <div class="form-group">
@@ -93,7 +93,29 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Complaint</button>
+            <!-- Additional Fields for Academics -->
+            <div class="form-group">
+                <label for="course"><i class="fas fa-graduation-cap"></i> <b>Course:</b></label>
+                <input type="text" class="form-control" id="course" name="course" required>
+            </div>
+
+            <div class="form-group">
+                <label for="semester"><i class="fas fa-calendar-alt"></i> <b>Semester:</b></label>
+                <input type="text" class="form-control" id="semester" name="semester" required>
+            </div>
+
+            <!-- Additional Fields for Infrastructure -->
+            <div class="form-group">
+                <label for="room_number"><i class="fas fa-door-open"></i> <b>Room Number:</b></label>
+                <input type="text" class="form-control" id="room_number" name="room_number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="building"><i class="fas fa-building"></i> <b>Building:</b></label>
+                <input type="text" class="form-control" id="building" name="building" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-save"></i> Save Complaint</button>
         </form>
     </div>
 
